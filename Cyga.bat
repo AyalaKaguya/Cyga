@@ -7,7 +7,7 @@ set "Assrmbly.args=%*"
 set "Assembly.Name=Cyga"
 set "Assembly.Version=1.0.0001"
 if not "%~1"=="" (
-	call :_syga_CheckModule %~1
+	call :_cyga_CheckModule %~1
 	if "%Module.IsInset%" == "false" (
        call :_onMissingCommand %Module.OnLoad%
 		 goto :eof
@@ -25,7 +25,7 @@ call:_main & exit 0
 set "cmd=*#*#uninput#*#*"
 set /p cmd=^>
 if "%cmd%" == "*#*#uninput#*#*" goto :_main
-call :_syga_CheckModule %cmd%
+call :_cyga_CheckModule %cmd%
 if "%Module.IsInset%" == "false" call :_onMissingCommand %Module.OnLoad% & goto :_main
 set ERRORLEVEL=0
 call :%cmd%
@@ -39,7 +39,7 @@ goto :eof
 
 :::::::::: Modules ::::::::::
 
-:_syga_CheckModule
+:_cyga_CheckModule
 set "Module.OnLoad=%1"
 for /f "eol=[tokens=1,*" %%a in (' type "%~f0" ') do (
 	if /i "%%a" equ ":%Module.OnLoad%" (
@@ -54,8 +54,10 @@ goto :eof
 
 :runinf
 echo %Assembly.Name% %Assembly.Version%
+echo,
 echo RunningPath: %Assembly.RuningPath%
 echo RunningFile: %Assembly.RuningFile%
+echo WorkingPath: %cd%
 goto :eof
 
 :import
@@ -63,7 +65,7 @@ if not exist "%1.gar" (
 	echo import:Can`t find module^!
 	goto :eof
 )
-call :_syga_CheckModule _%1_init
+call :_cyga_CheckModule _%1_init
 if "%Module.IsInset%" == "true" (
     call :_%1_init
 	 goto :eof
