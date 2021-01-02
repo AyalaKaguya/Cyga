@@ -52,7 +52,7 @@ goto :eof
 
 :::::::::: Commands ::::::::::
 
-:runinf
+:runinfo
 echo %Assembly.Name% %Assembly.Version%
 echo,
 echo RunningPath: %Assembly.RuningPath%
