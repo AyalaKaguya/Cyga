@@ -1,0 +1,12 @@
+[GardensLibraryFile]
+
+*#*#network#*#*
+:_network_init
+echo network:Already installed
+goto :eof
+
+:ping
+ping %*
+goto :eof
+*#*#end#*#*
+

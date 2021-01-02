@@ -1,0 +1,68 @@
+[GardensLibraryFile]
+
+*#*#cmd#*#*
+:_cmd_init
+echo cmd:Already installed
+goto :eof
+
+:dir
+dir %*
+goto :eof
+
+:del
+del %*
+goto :eof
+
+:echo
+echo %*
+goto :eof
+
+:set
+set %*
+goto :eof
+
+:rd
+rd %*
+goto :eof
+
+:rmdir
+rmdir %*
+goto :eof
+
+:md
+md %*
+goto :eof
+
+:mkdir
+mkdir %*
+goto :eof
+
+:type
+type %*
+goto :eof
+
+:cls
+cls %*
+goto :eof
+
+:copy
+copy %*
+goto :eof
+
+:date
+date %*
+goto :eof
+
+:time
+time %*
+goto :eof
+
+:cd
+cd %*
+goto :eof
+
+:chdir
+chdir %*
+goto :eof
+*#*#end#*#*
+
