@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 set "Assembly.RuningPath=%~dp0"
 set "Assembly.RuningFile=%~f0"
 set "Assrmbly.args=%*"
-set "Assembly.Name=Syga"
+set "Assembly.Name=Cyga"
 set "Assembly.Version=1.0.0001"
 if not "%~1"=="" (
 	call :_syga_CheckModule %~1
