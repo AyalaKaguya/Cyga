@@ -5,11 +5,12 @@
 set "def=call:garlib_def"
 set "def.type=system"
 set "return=goto :eof"
-set "gfl.var=1.0.0030"
+set "gfl.var=1.0.0031"
 set "gfl.power=Gardens Framework Library (GFL)"
 set "gfl.init=call:garlib_init"
 !def! garlib_io_print as function
-echo %gfl.power%:Already installed
+echo garlib:Already installed
+echo %gfl.power% v%gfl.var%
 goto :eof
 
 :def

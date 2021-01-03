@@ -5,11 +5,11 @@ set "Assembly.RuningPath=%~dp0"
 set "Assembly.RuningFile=%~f0"
 set "Assembly.args=%*"
 set "Assembly.Name=Cyga"
-set "Assembly.Version=1.0.1001"
+set "Assembly.Version=1.0.1002"
 if not "%~1"=="" (
 	call :_cyga_CheckModule %~1
-	if "%Module.IsInset%" == "false" (
-       call :_onMissingCommand %Module.OnLoad%
+	if "!Module.IsInset!" == "false" (
+       call :_onMissingCommand !Module.OnLoad!
 		 goto :eof
 	) 
 	call :%~1 %~2 %~3 %~4 %~5 %~6 %~7 %~8 %~9
@@ -41,13 +41,13 @@ goto :eof
 
 :_cyga_CheckModule
 set "Module.OnLoad=%1"
+set "Module.IsInset=false"
 for /f "eol=[tokens=1,*" %%a in (' type "%~f0" ') do (
 	if /i "%%a" equ ":%Module.OnLoad%" (
 		set "Module.IsInset=true"
 		goto :eof
 	)
 )
-set "Module.IsInset=false"
 goto :eof
 
 :::::::::: Commands ::::::::::

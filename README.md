@@ -50,7 +50,7 @@ exit
 
 Revision | Date | Changes
 ---|---|---
-1.0.1001 | 2021-01-02 | Origin Push
+1.0.1002 | 2021-01-02 | Bug Fix
 
 ## Copyright and License
 
