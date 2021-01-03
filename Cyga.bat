@@ -5,7 +5,7 @@ set "Assembly.RuningPath=%~dp0"
 set "Assembly.RuningFile=%~f0"
 set "Assembly.args=%*"
 set "Assembly.Name=Cyga"
-set "Assembly.Version=1.0.0001"
+set "Assembly.Version=1.0.1001"
 if not "%~1"=="" (
 	call :_cyga_CheckModule %~1
 	if "%Module.IsInset%" == "false" (
