@@ -3,7 +3,7 @@
 setlocal enabledelayedexpansion
 set "Assembly.RuningPath=%~dp0"
 set "Assembly.RuningFile=%~f0"
-set "Assrmbly.args=%*"
+set "Assembly.args=%*"
 set "Assembly.Name=Cyga"
 set "Assembly.Version=1.0.0001"
 if not "%~1"=="" (
