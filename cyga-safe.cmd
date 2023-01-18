@@ -1,0 +1,1 @@
+@cmd /k "%~dp0cygavars.bat -safemode"

@@ -1,57 +1,87 @@
-# Cyga
+# Cyga 2.0
 
-A modular, lightweight batch console architecture pays homage to the last work of gardens OS. It integrates the object-oriented design idea of garrib. However, please note that the current version is still in the conceptual stage, only realizing the basic idea.
+一个模块化、轻量的Batch 控制台环境，致敬 `Gardens OS` 的最后一作（真的是最后一作）。完美整合了 `Garlib` 的面向对象设计思想。当前版本概念已经成型，实现了基本构想。
 
-一个模块化、轻量的Batch 控制台架构，致敬Gardens OS的最后一作。整合了Garlib的面向对象设计思想。但是请注意：当前版本仍然处于概念阶段，仅实现基本构想。
+## 比一代强在哪里？
 
-## How to use
+`Cyga2.0` 相比 `Cyga` 一代来说，完全使用了原生CMD实现，具有一定的实用性。一些群友的评价：`当Cyga2.0启用了Garlib2.0之后，会使得CMD具有一定的迷惑性，类似于REPL（Read-Eval-Print Loop），CMD表现的更像一个编程语言` 。
 
-Cyga doesn't have many predefined commands, but you can do something to meet your needs.
+由于 `Cyga2.0` 带来的架构更新，带来了无与伦比的兼容性和横向扩展性，但是它依旧只是个CMD。
 
-Cyga并没有非常多的预定义命令，但你可以通过一些操作来满足你的需求。
+-----
 
-### import a module
+## 如何使用
 
-We built in three basic modules to implement some basic operations. Of course, you can open these module files and write custom modules based on them.
+`Cyga` 并没有非常多的命令，但你可以通过一些操作来满足你的需求。
 
-我们内置了三个基本模块来实现一些基本操作，当然你也可以打开这些模块文件，并仿照它们编写自定义模块。
+在以下教程中，我们将着重讲解如何定制你的 `Cyga` 体验以及 `Garlib` 的基本使用方法。
 
-You can use the following commands to introduce them:
+### 启用一个模块
 
-你可以使用以下指令来引入它们：
+我们开发了一个简陋的模块系统，使得 `Cyga` 的环境具有一定的定制能力，你可以通过使用不同的模块来获得不同的CMD体验，当然你也可以打开这些模块文件夹，并仿照它们编写自定义模块。
 
-```s
-import [moduleName]
-```
-
-ModuleName | Description
----|---
-garlib | A junk object oriented batch programming library.
-cmd | Introduce some common CMD commands.
-network | Network module, such as 'ping'.
-
-For some reasons, we don't want to explain the usage of these modules in detail here. Please understand it in combination with the source code.
-
-出于某些原因，我们并不想在这里详细说明这些模块的用法，请结合源代码食用。
-
-### show Cyga`s information
+你可以使用以下指令来启用一个模块：
 
 ```s
-runinfo
+enable [moduleName]
 ```
 
-### Close Cyga
+如果不指定 `moduleName` ，那么 `enable` 将会展示 `./arch` 目录下所有的文件夹，这些文件夹的每个在一般情况下代表着一个模块。
 
-```s
-exit
+当成功指定一个存在的 `moduleName`，那么 `enable` 将会调用 `./arch/<moduleName>/<moduleName>.init.cmd` ，如何编写 `init` 文件可以参考`./arch/garlib/garlib.init.cmd` [传送门](https://github.com/AyalaKaguya/Cyga/blob/main/arch/garlib/garlib.init.cmd)。
+
+### 自定义工具
+
+`Cyga` 存在一个目录 `./bin` ，你可以将你常用但不想放在原版CMD的PATH里的工具放在这里，在启动 `Cyga` 之后，这些工具将会自动导入环境。
+
+你可以在安全模式打开 `Cyga` ，这会使得你无法使用System32下的所有工具，但是在排查一些问题的时候安全模式会很有用。
+
+`./lib` 是存放 `Cyga` 内部脚本的地方，这里一般不推荐乱动。
+
+### Garlib 面向对象的CMD
+
+`Garlib` 为CMD提供了一个虚假的类型系统，使得CMD的一些行为变得反直觉，但是它的存在是喜人的，就像不知道做什么的时候突然发现了有意思的事情一样。
+
+详细教程见[garlib.md](garlib.md)
+
+### 脚本支持
+
+如果你要在 `Cyga` 的环境下运行脚本，你需要知道以下几点：
+
+1. 所有 `Cyga` 和 `Garlib` 的方法需要在前面加 `call` 指令，比如说：
+
+```bat
+::cyga-script.bat
+@echo off
+call enable garlib
+call String s = "Hello, World!"
+call print s
+...
 ```
 
-## Revisions
+当然如果有什么不依靠call还能正常执行的方法也请提给我。
+
+2. 后面几点想到再说。
+
+### 关于可能的未来
+
+`Garlib` 的类型系统仍然是不完善的，在后期我们可能会考虑使用以下存储库的内容来改善它：
+
+[https://github.com/npocmaka/batch.scripts](https://github.com/npocmaka/batch.scripts)
+
+[https://github.com/ritchielawrence/batchfunctionlibrary](https://github.com/ritchielawrence/batchfunctionlibrary)
+
+-----
+
+## 版本变化
 
 Revision | Date | Changes
 ---|---|---
 1.0.1002 | 2021-01-02 | Bug Fix
+2.0b | 2023-01-18 | Total Upgrade
 
-## Copyright and License
+-----
 
-Code and documentation copyright 2016-2021 TePuint Club. Code released under [MIT License](https://github.com/AyalaKaguya/Cyga/blob/main/LICENSE)
+## 版权和许可证
+
+Code and documentation copyright 2016-2023 TePuint Club. Code released under [MIT License](https://github.com/AyalaKaguya/Cyga/blob/main/LICENSE)
