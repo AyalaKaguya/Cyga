@@ -79,6 +79,7 @@ Revision | Date | Changes
 ---|---|---
 1.0.1002 | 2021-01-02 | Bug Fix
 2.0b | 2023-01-18 | Total Upgrade
+2.1b | 2023-01-24 | Add user config
 
 -----
 

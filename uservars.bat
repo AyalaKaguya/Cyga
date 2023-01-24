@@ -1,1 +1,1 @@
-set "PATH=%PATH%;C:\Users\ayala\AppData\Local\Android\Sdk\platform-tools"
+set "PATH=%PATH%;%USERPROFILE%\AppData\Local\Android\Sdk\platform-tools"
