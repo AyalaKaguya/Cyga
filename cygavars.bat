@@ -18,4 +18,6 @@ if defined Cyga_Flag_SafeMode (
    set "PATH=%PATH%;%Cyga_Path%\bin;%Cyga_Path%\lib;%Cyga_Path%"
 )
 
+if exist "./uservars.bat" call "./uservars.bat"
+
 if "%CD%\"=="%Cyga_Path%" cd /d "%HOMEDRIVE%%HOMEPATH%"
