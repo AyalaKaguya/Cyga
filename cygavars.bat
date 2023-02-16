@@ -1,5 +1,5 @@
 @echo off
-set "Cyga_Version=v2.1b"
+set "Cyga_Version=v2.2a"
 set "Cyga_Flag=%*"
 set "Cyga_Path=%~dp0"
 if defined Cyga_Flag (

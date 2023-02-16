@@ -1,4 +1,4 @@
-# Cyga 2.0
+# Cyga 2.2a
 
 一个模块化、轻量的Batch 控制台环境，致敬 `Gardens OS` 的最后一作（真的是最后一作）。完美整合了 `Garlib` 的面向对象设计思想。当前版本概念已经成型，实现了基本构想。
 
@@ -63,6 +63,19 @@ call print s
 
 2. 后面几点想到再说。
 
+### 用户启动脚本
+
+当你在 `Cyga` 根目录创建名为 `uservars.bat` 的文件后，这个文件将会成为**用户启动脚本**，该脚本的编写遵循[脚本支持](#脚本支持)中的部分，**用户启动脚本**会在 `cygavars.bat` 完成侧载后、更改目录前执行。
+
+在这个脚本内你可以执行一些个性化的设置，比如修改CMD的窗口大小和样式、通过 `call enable` 来启用某些功能甚至修改 `Cyga` 的运行路径，以下举了个常用的例子：
+
+```bat
+::uservars.bat
+call enable bcn
+color 0f
+mode con: cols=110 lines=35
+```
+
 ### 关于可能的未来
 
 `Garlib` 的类型系统仍然是不完善的，在后期我们可能会考虑使用以下存储库的内容来改善它：
@@ -80,6 +93,7 @@ Revision | Date | Changes
 1.0.1002 | 2021-01-02 | Bug Fix
 2.0b | 2023-01-18 | Total Upgrade
 2.1b | 2023-01-24 | Add user config
+2.2a | 2023-02-16 | Add bcn support ...
 
 -----
 

@@ -1,5 +1,6 @@
 @echo off
 set "Cyga_Flag=%1"
+if not defined Cyga_Path goto :eof
 if defined Cyga_Flag (
    if not defined Cyga_Enable_%Cyga_Flag% (
        if exist "%Cyga_Path%\arch\%Cyga_Flag%\" (

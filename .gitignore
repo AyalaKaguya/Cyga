@@ -1,3 +1,5 @@
+# Cyga 2.0 ignore files
 uservars.bat
 bin/
 arch/garlib/runtime/*
+test/
