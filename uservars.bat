@@ -1,1 +1,0 @@
-set "PATH=%PATH%;%USERPROFILE%\AppData\Local\Android\Sdk\platform-tools"
