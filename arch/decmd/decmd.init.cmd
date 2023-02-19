@@ -1,6 +1,6 @@
 @echo off
 if defined Cyga_Flag_SafeMode (
-    echo bcn:Error^(Can not use bcn in SafeMode^!^)
+    echo decmd:Error^(Can not use decmd in SafeMode^!^)
     goto :eof
 )
 
