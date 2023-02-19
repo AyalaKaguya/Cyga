@@ -14,7 +14,7 @@ if exist "%Cyga_LibDir%\sbin\bcn.bat%" (
     setlocal
     set "/o=%Cyga_BinDir%"
 
-    if not exist "%Cyga_BinDir%\unrar.rar" (
+    if not exist "%Cyga_BinDir%\unrar.exe" (
         echo bcn:Info^(Install the front module...^)
         call "%~dp0\sbin\bcn.bat" get unrar)
     

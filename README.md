@@ -94,6 +94,7 @@ Revision | Date | Changes
 2.0b | 2023-01-18 | Total Upgrade
 2.1b | 2023-01-24 | Add user config
 2.2a | 2023-02-16 | Add bcn support ...
+2.3b | 2023-02-19 | Add decmd support ...
 
 -----
 
