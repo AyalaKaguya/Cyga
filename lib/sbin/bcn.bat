@@ -128,7 +128,7 @@ if /i "%~1"=="down" (
 
 if "%cmd%"=="" (
     echo ÃüÁî²»´æÔÚ^^! >&2
-    findstr "^::" "%~f0"
+    findstr "^::" "%~f0"|more
     endlocal&exit /b 1
 ) else if "%cmd%"=="del-tool" (
     rd /s /q "%~dp0%~2" 2>nul
