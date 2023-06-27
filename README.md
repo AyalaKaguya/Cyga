@@ -1,4 +1,4 @@
-# Cyga 2.3b
+# Cyga 2.4
 
 一个模块化、轻量的Batch 控制台环境，致敬 `Gardens OS` 的最后一作（真的是最后一作）。完美整合了 `Garlib` 的面向对象设计思想。当前版本概念已经成型，实现了基本构想。
 
@@ -95,6 +95,7 @@ Revision | Date | Changes
 2.1b | 2023-01-24 | Add user config
 2.2a | 2023-02-16 | Add bcn support ...
 2.3b | 2023-02-19 | Add decmd support ...
+2.4 | 2023-06-27 | Add default cmd agent ...
 
 -----
 

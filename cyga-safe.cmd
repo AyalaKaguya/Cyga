@@ -1,1 +1,1 @@
-@cmd /k "%~dp0cygavars.bat -safemode"
+@cmd /k "%~dp0cygavars.bat --safemode"
