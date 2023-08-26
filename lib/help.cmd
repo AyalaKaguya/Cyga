@@ -8,6 +8,7 @@ if defined Cyga_Flag_SafeMode (
 
 echo HELP             Display help information
 echo ENABLE           Enable the Cyga Tools extension
+echo BCN              Command-line environment package manager
 echo log              输出指针的内容并继续
 echo var              创建一个变量指针
 echo pwd              获取当前工作路径

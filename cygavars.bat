@@ -10,7 +10,7 @@ rem Backup of raw path
 set "Cyga_Path_Backup=%PATH%"
 
 for %%j in ("%~1" "%~2") do (
-    if "%%~j"=="-safemode" set "Cyga_Flag_SafeMode=True"
+    if "%%~j"=="--safemode" set "Cyga_Flag_SafeMode=True"
 )
 
 echo Your environment has been set up for using Cyga %Cyga_Version%.
