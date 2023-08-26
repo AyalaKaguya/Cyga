@@ -1,6 +1,6 @@
 @echo off
 rem Cyga envs
-set "Cyga_Version=v2.3b"
+set "Cyga_Version=v2.4"
 set "Cyga_Flag=%*"
 rem Some Path dirs
 set "Cyga_WorkDir=%~dp0"
