@@ -1,4 +1,21 @@
 @echo off
+
+if "#%1" equ "#" (
+   echo CygaBox pi ^(BATCH^)
+   echo Usage:
+   echo     call pi ^<len:pint^> ^<return:?pint^>
+   echo,
+   echo Output:
+   echo     If return is not empty, pi of the length (without points) is specified in the standard output len pointer, and vice versa is stored to the return pointer.
+   echo,
+   echo Example:
+   echo     var len 100
+   echo     pi len
+   echo     pi len output
+   echo     log output
+   goto:eof
+)
+
 :pi <len:pint> <return:?pint>
 setlocal EnableDelayedExpansion
 set "pi="

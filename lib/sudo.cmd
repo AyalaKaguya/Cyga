@@ -1,4 +1,19 @@
 @echo off
+
+if "#%1" equ "#" (
+   echo CygaBox sudo ^(BATCH^)
+   echo Usage:
+   echo     call sudo [command?[command?[command?[...]]]]
+   echo,
+   echo Output:
+   echo     Execute commands as administrators, command to ? Apart, it will boot from a separate environment.
+   echo,
+   echo Example:
+   echo     sudo cmd
+   echo     sudo set?pause
+   goto:eof
+)
+
 setlocal ENABLEDELAYEDEXPANSION
 set params=%*
 if defined params (

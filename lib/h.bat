@@ -1,1 +1,1 @@
-@call %~dp0help.cmd
+@call %~dp0help.cmd %*

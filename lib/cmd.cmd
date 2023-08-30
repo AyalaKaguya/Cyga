@@ -16,12 +16,10 @@ if defined Cyga_Flag_SafeMode (
     echo.
 )
 title %ComSpec%
+call cygalib set_prompt_cmd
 %ComSpec% %*
-if defined Cyga_Flag_SafeMode (
-   title Cyga tools environment ^| %Cyga_Version% Safe-Mode
-) else (
-   title Cyga tools environment ^| %Cyga_Version%
-)
+call cygalib set_title
+call cygalib set_prompt
 set "PATH=%Cyga_Path_Backup_CMD%"
 set "Cyga_Path_Backup_CMD="
 echo You're now back in Cyga's environment
