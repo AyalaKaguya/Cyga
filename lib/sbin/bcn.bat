@@ -1,5 +1,5 @@
 1>1/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::  bcn 5.4  by bailong360 @www.bathome.net
+::  bcn 5.5  by bailong360 @www.bathome.net
 :: 首发兼更新地址:http://www.bathome.net/thread-32322-1-1.html
 ::
 :: 使用时请将bcn.bat放入任意一个PATH中的目录以便调用
@@ -55,6 +55,9 @@
 :: 改进与维护： CrLf, bailong360, Batcher
 :: 推荐和建议： templinshi, 依山居, tigerpower
 
+:+ 5.5
+:+  修复因PATH中找不到unrar导致解压失败的问题
+:+
 :+ 5.4
 :+  修复bcn因防盗链而下载失败的问题
 :+
@@ -164,6 +167,11 @@ try {
     var bcnPath = FSO.GetFile(WScript.ScriptFullName).ParentFolder.Path + '\\'; //第三方存放地址,默认为bcn.bat所处目录
     var SavPath = Argv.Item('path') == '' ? bcnPath : (Argv.Item('path') == '-' ? WShell.CurrentDirectory + '\\' : Argv.Item('path').replace(/\\$/, '') + '\\');
     var host    = 'http://bcn.bathome.net';
+
+    var env = WShell.Environment("PROCESS");
+    var path = env("PATH");
+    path += ";"+bcnPath+";"+bcnPath+"\\tool"; 
+    env("PATH") = path;
 
     if (!CheckListDate()) {
         download('/list/tool.@version.txt', bcnPath);
